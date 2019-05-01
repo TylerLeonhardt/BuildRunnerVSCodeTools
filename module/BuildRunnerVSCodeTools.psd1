@@ -21,25 +21,25 @@ CompatiblePSEditions = @("Desktop", "Core")
 GUID = '4ca290b5-1834-4c90-b6ff-9e3431c71ca1'
 
 # Author of this module
-Author = 'tyler'
+Author = 'tylerleonhardt'
 
 # Company or vendor of this module
-CompanyName = 'Unknown'
+CompanyName = 'Tyler Leonhardt'
 
 # Copyright statement for this module
-Copyright = '(c) tyler. All rights reserved.'
+Copyright = '(c) Tyler Leonhardt. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'A collection of tools for making the PSake & InvokeBuild experience in VSCode better!'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
 
 # Name of the PowerShell host required by this module
-# PowerShellHostName = ''
+PowerShellHostName = 'Visual Studio Code Host'
 
 # Minimum version of the PowerShell host required by this module
-# PowerShellHostVersion = ''
+PowerShellHostVersion = '2.0.0'
 
 # Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
 # DotNetFrameworkVersion = ''
@@ -66,10 +66,10 @@ Copyright = '(c) tyler. All rights reserved.'
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @("bin/BuildRunnerVSCodeTools.dll")
+NestedModules = @('bin/BuildRunnerVSCodeTools.dll')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @( "Add-BuildRunnerProfileScript" )
+FunctionsToExport = @('Add-BuildRunnerProfileScript')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -95,19 +95,22 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @('psake', 'InvokeBuild', 'PSEdition_Desktop', 'PSEdition_Core', 'Windows', 'Linux', 'MacOS')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/TylerLeonhardt/BuildRunnerVSCodeTools/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/TylerLeonhardt/BuildRunnerVSCodeTools'
 
         # A URL to an icon representing this module.
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = '# v0.1.0
+
+Initial Release
+'
 
     } # End of PSData hashtable
 

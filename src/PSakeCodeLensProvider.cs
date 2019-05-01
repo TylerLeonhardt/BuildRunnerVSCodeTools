@@ -35,6 +35,19 @@ namespace Microsoft.PowerShell.EditorServices.CodeLenses
         /// <returns>All CodeLenses for the given PSake symbol.</returns>
         private CodeLens[] GetPSakeLens(PSakeSymbolReference psakeSymbol, ScriptFile scriptFile)
         {
+            var command = "Invoke-Build";
+            var args = new string[] { 
+                "-Task", psakeSymbol.TaskName, 
+                "-File", scriptFile.FilePath };
+            if (_symbolProvider is PSakeDocumentSymbolProvider psakeDocumentSymbolProvider
+                && psakeDocumentSymbolProvider.BuildRunner == PSakeDocumentSymbolProvider.BuildRunnerOptions.PSake)
+            {
+                command = "Invoke-psake";
+                args = new string[] { 
+                    "-buildFile", scriptFile.FilePath,
+                    "-taskList", psakeSymbol.TaskName };
+            }
+
             var codeLensResults = new CodeLens[]
             {
                 new CodeLens(
@@ -46,8 +59,8 @@ namespace Microsoft.PowerShell.EditorServices.CodeLenses
                         "Run task",
                         new object[] {
                             false /* No debug */,
-                            "Invoke-Build",
-                            new string[] { psakeSymbol.TaskName, scriptFile.FilePath } })),
+                            command,
+                            args })),
 
                 new CodeLens(
                     this,
@@ -58,8 +71,8 @@ namespace Microsoft.PowerShell.EditorServices.CodeLenses
                         "Debug task",
                         new object[] {
                             true /* Run in the debugger */,
-                            "Invoke-Build",
-                            new string[] { psakeSymbol.TaskName, scriptFile.FilePath } })),
+                            command,
+                            args })),
             };
 
             return codeLensResults;

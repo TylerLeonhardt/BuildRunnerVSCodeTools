@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>BuildRunnerVSCodeTools</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.0-preview-06">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <Reference Include="Microsoft.PowerShell.EditorServices">
+      <HintPath>..\lib\PowerShellEditorServices\bin\Microsoft.PowerShell.EditorServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.PowerShell.EditorServices.Protocol">
+      <HintPath>..\lib\PowerShellEditorServices\bin\Microsoft.PowerShell.EditorServices.Protocol.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

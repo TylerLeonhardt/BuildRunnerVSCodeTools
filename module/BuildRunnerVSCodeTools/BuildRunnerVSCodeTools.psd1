@@ -33,7 +33,7 @@ Copyright = '(c) Tyler Leonhardt. All rights reserved.'
 Description = 'A collection of tools for making the PSake & InvokeBuild experience in VSCode better!'
 
 # Minimum version of the PowerShell engine required by this module
-# PowerShellVersion = ''
+PowerShellVersion = '5.1'
 
 # Name of the PowerShell host required by this module
 PowerShellHostName = 'Visual Studio Code Host'
